@@ -1,0 +1,38 @@
+name: edeliverysite
+description: "A new Flutter project."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.10+1
+  flutter_easy_faq: ^1.0.1
+  url_launcher: ^6.3.0
+  masked_text: ^1.1.2
+  teledart: ^0.6.1
+  flutter_localizations:
+    sdk: flutter
+  flutter_bloc: ^8.1.6
+  dio: ^5.7.0
+  equatable: ^2.0.5
+  get_it: ^7.7.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+
+  fonts:
+    - family: AlegreyaSans
+      fonts:
+        - asset: "fonts/AlegreyaSans-Thin.ttf"
