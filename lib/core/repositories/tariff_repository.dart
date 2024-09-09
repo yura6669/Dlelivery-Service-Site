@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:edeliverysite/core/models/tariff_model.dart';
+import 'package:delivery_service/core/models/tariff_model.dart';
 
 abstract class TariffRepository {
   Future<List<TariffModel>> getTariffs();

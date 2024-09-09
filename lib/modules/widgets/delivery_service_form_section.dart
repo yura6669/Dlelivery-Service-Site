@@ -1,23 +1,25 @@
 // ignore_for_file: prefer_interpolation_to_compose_strings, prefer_adjacent_string_concatenation
 
-import 'package:edeliverysite/modules/dialogs/message_dialog.dart';
-import 'package:edeliverysite/modules/resorses/app_colors.dart';
-import 'package:edeliverysite/modules/resorses/ink_wrapper.dart';
-import 'package:edeliverysite/modules/resorses/resorses.dart';
+import 'package:delivery_service/modules/dialogs/message_dialog.dart';
+import 'package:delivery_service/modules/resorses/app_colors.dart';
+import 'package:delivery_service/modules/resorses/ink_wrapper.dart';
+import 'package:delivery_service/modules/resorses/resorses.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:masked_text/masked_text.dart';
 import 'package:teledart/teledart.dart';
 import 'package:teledart/telegram.dart';
 
-class EDeliveryFormSection extends StatefulWidget {
-  const EDeliveryFormSection({super.key});
+class DeliveryServiceFormSection extends StatefulWidget {
+  const DeliveryServiceFormSection({super.key});
 
   @override
-  State<EDeliveryFormSection> createState() => _EDeliveryFormSectionState();
+  State<DeliveryServiceFormSection> createState() =>
+      _DeliveryServiceFormSectionState();
 }
 
-class _EDeliveryFormSectionState extends State<EDeliveryFormSection> {
+class _DeliveryServiceFormSectionState
+    extends State<DeliveryServiceFormSection> {
   late GlobalKey<FormState> _formKey;
   late TextEditingController _nameController;
   late TextEditingController _phoneController;

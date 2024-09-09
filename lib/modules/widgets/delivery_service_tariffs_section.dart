@@ -1,11 +1,11 @@
-import 'package:edeliverysite/modules/dialogs/tariffs/tariffs_dialog.dart';
-import 'package:edeliverysite/modules/resorses/app_colors.dart';
-import 'package:edeliverysite/modules/resorses/ink_wrapper.dart';
-import 'package:edeliverysite/modules/resorses/resorses.dart';
+import 'package:delivery_service/modules/dialogs/tariffs/tariffs_dialog.dart';
+import 'package:delivery_service/modules/resorses/app_colors.dart';
+import 'package:delivery_service/modules/resorses/ink_wrapper.dart';
+import 'package:delivery_service/modules/resorses/resorses.dart';
 import 'package:flutter/material.dart';
 
-class EDeliveryTariffsSection extends StatelessWidget {
-  const EDeliveryTariffsSection({super.key});
+class DeliveryServiceTariffsSection extends StatelessWidget {
+  const DeliveryServiceTariffsSection({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_interpolation_to_compose_strings, prefer_adjacent_string_concatenation
 
-import 'package:edeliverysite/modules/dialogs/message_dialog.dart';
-import 'package:edeliverysite/modules/resorses/app_colors.dart';
-import 'package:edeliverysite/modules/resorses/ink_wrapper.dart';
-import 'package:edeliverysite/modules/resorses/resorses.dart';
+import 'package:delivery_service/modules/dialogs/message_dialog.dart';
+import 'package:delivery_service/modules/resorses/app_colors.dart';
+import 'package:delivery_service/modules/resorses/ink_wrapper.dart';
+import 'package:delivery_service/modules/resorses/resorses.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:masked_text/masked_text.dart';
@@ -240,7 +240,7 @@ class _BusinessDialogState extends State<BusinessDialog> {
   Widget _buildDeliveryEachItem(DeliveriesEachWeek deliveryEachWeek) {
     return InkWrapper(
       radius: 10,
-      onTap: () => _changeDeliveryEachWeek(deliveryEachWeek),
+      onTap: () => _changDeliveryServiceEachWeek(deliveryEachWeek),
       child: Container(
         constraints: BoxConstraints(
           minWidth: isMobile(context)
@@ -504,7 +504,7 @@ class _BusinessDialogState extends State<BusinessDialog> {
         : null;
   }
 
-  void _changeDeliveryEachWeek(DeliveriesEachWeek deliveryEachWeek) {
+  void _changDeliveryServiceEachWeek(DeliveriesEachWeek deliveryEachWeek) {
     setState(() {
       _deliveriesEachWeek = deliveryEachWeek;
     });

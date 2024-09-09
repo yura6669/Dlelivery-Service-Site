@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-import 'package:edeliverysite/modules/resorses/app_colors.dart';
+import 'package:delivery_service/modules/resorses/app_colors.dart';
 import 'package:flutter/material.dart';
 
 enum TermExecution { urdently, for2Hours, scheduled }

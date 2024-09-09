@@ -1,9 +1,9 @@
-import 'package:edeliverysite/core/di/locator.dart';
-import 'package:edeliverysite/core/models/tariff_model.dart';
-import 'package:edeliverysite/modules/dialogs/message_dialog.dart';
-import 'package:edeliverysite/modules/dialogs/tariffs/bloc/tariffs_bloc.dart';
-import 'package:edeliverysite/modules/resorses/app_colors.dart';
-import 'package:edeliverysite/modules/resorses/resorses.dart';
+import 'package:delivery_service/core/di/locator.dart';
+import 'package:delivery_service/core/models/tariff_model.dart';
+import 'package:delivery_service/modules/dialogs/message_dialog.dart';
+import 'package:delivery_service/modules/dialogs/tariffs/bloc/tariffs_bloc.dart';
+import 'package:delivery_service/modules/resorses/app_colors.dart';
+import 'package:delivery_service/modules/resorses/resorses.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

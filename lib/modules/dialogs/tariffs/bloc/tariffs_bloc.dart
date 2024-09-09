@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:edeliverysite/core/models/tariff_model.dart';
-import 'package:edeliverysite/core/repositories/tariff_repository.dart';
+import 'package:delivery_service/core/models/tariff_model.dart';
+import 'package:delivery_service/core/repositories/tariff_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'tariffs_event.dart';

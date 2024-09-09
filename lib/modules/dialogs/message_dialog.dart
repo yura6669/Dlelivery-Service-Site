@@ -1,6 +1,6 @@
-import 'package:edeliverysite/modules/resorses/app_colors.dart';
-import 'package:edeliverysite/modules/resorses/ink_wrapper.dart';
-import 'package:edeliverysite/modules/resorses/resorses.dart';
+import 'package:delivery_service/modules/resorses/app_colors.dart';
+import 'package:delivery_service/modules/resorses/ink_wrapper.dart';
+import 'package:delivery_service/modules/resorses/resorses.dart';
 import 'package:flutter/material.dart';
 
 class MessageDialog extends StatelessWidget {

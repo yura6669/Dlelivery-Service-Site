@@ -1,11 +1,11 @@
-import 'package:edeliverysite/modules/resorses/ink_wrapper.dart';
-import 'package:edeliverysite/modules/resorses/resorses.dart';
+import 'package:delivery_service/modules/resorses/ink_wrapper.dart';
+import 'package:delivery_service/modules/resorses/resorses.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class EDeliveryAppBar extends StatelessWidget {
+class DeliveryServiceAppBar extends StatelessWidget {
   final VoidCallback onOpenMenu;
-  const EDeliveryAppBar({required this.onOpenMenu, super.key});
+  const DeliveryServiceAppBar({required this.onOpenMenu, super.key});
 
   @override
   Widget build(BuildContext context) {

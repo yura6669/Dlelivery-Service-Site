@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_interpolation_to_compose_strings, prefer_adjacent_string_concatenation
 
-import 'package:edeliverysite/modules/dialogs/message_dialog.dart';
-import 'package:edeliverysite/modules/resorses/app_colors.dart';
-import 'package:edeliverysite/modules/resorses/ink_wrapper.dart';
-import 'package:edeliverysite/modules/resorses/resorses.dart';
+import 'package:delivery_service/modules/dialogs/message_dialog.dart';
+import 'package:delivery_service/modules/resorses/app_colors.dart';
+import 'package:delivery_service/modules/resorses/ink_wrapper.dart';
+import 'package:delivery_service/modules/resorses/resorses.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:masked_text/masked_text.dart';
@@ -1356,14 +1356,13 @@ class _OrderDialogState extends State<OrderDialog> {
           setState(() {});
           return;
         }
-        if (_scheduledDate ==
-                    DateTime(DateTime.now().year, DateTime.now().month,
-                        DateTime.now().day) &&
-                _scheduledFromTime.hour < DateTime.now().hour ||
-            _scheduledDate ==
-                    DateTime(DateTime.now().year, DateTime.now().month,
-                        DateTime.now().day) &&
-                _scheduledFromTime.minute < DateTime.now().minute) {
+        if (DateTime(
+                DateTime.now().year,
+                DateTime.now().month,
+                DateTime.now().day,
+                _scheduledFromTime.hour,
+                _scheduledFromTime.minute)
+            .isBefore(DateTime.now())) {
           _showMessage(
             title: 'Помилка',
             message: 'Оберіть коректний час',
@@ -1372,14 +1371,13 @@ class _OrderDialogState extends State<OrderDialog> {
           setState(() {});
           return;
         }
-        if (_scheduledDate ==
-                    DateTime(DateTime.now().year, DateTime.now().month,
-                        DateTime.now().day) &&
-                _scheduledToTime.hour < DateTime.now().hour ||
-            _scheduledDate ==
-                    DateTime(DateTime.now().year, DateTime.now().month,
-                        DateTime.now().day) &&
-                _scheduledToTime.minute < DateTime.now().minute) {
+        if (DateTime(
+                DateTime.now().year,
+                DateTime.now().month,
+                DateTime.now().day,
+                _scheduledToTime.hour,
+                _scheduledToTime.minute)
+            .isBefore(DateTime.now())) {
           _showMessage(
             title: 'Помилка',
             message: 'Оберіть коректний час',

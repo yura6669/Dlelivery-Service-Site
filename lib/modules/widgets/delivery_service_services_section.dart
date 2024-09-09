@@ -1,8 +1,8 @@
-import 'package:edeliverysite/modules/resorses/resorses.dart';
+import 'package:delivery_service/modules/resorses/resorses.dart';
 import 'package:flutter/material.dart';
 
-class EDeliveryServicesSection extends StatelessWidget {
-  const EDeliveryServicesSection({super.key});
+class DeliveryServiceServicesSection extends StatelessWidget {
+  const DeliveryServiceServicesSection({super.key});
 
   @override
   Widget build(BuildContext context) {

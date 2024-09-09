@@ -1,11 +1,11 @@
-import 'package:edeliverysite/modules/resorses/ink_wrapper.dart';
-import 'package:edeliverysite/modules/resorses/resorses.dart';
+import 'package:delivery_service/modules/resorses/ink_wrapper.dart';
+import 'package:delivery_service/modules/resorses/resorses.dart';
 import 'package:flutter/material.dart';
 
-class EDeliveryPromoSection extends StatelessWidget {
+class DeliveryServicePromoSection extends StatelessWidget {
   final VoidCallback onOrder;
   final VoidCallback onForBusiness;
-  const EDeliveryPromoSection(
+  const DeliveryServicePromoSection(
       {required this.onOrder, required this.onForBusiness, super.key});
 
   @override

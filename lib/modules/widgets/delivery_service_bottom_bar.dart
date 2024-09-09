@@ -1,10 +1,10 @@
-import 'package:edeliverysite/modules/resorses/ink_wrapper.dart';
-import 'package:edeliverysite/modules/resorses/resorses.dart';
+import 'package:delivery_service/modules/resorses/ink_wrapper.dart';
+import 'package:delivery_service/modules/resorses/resorses.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class EDeliveryBottomBar extends StatelessWidget {
-  const EDeliveryBottomBar({super.key});
+class DeliveryServiceBottomBar extends StatelessWidget {
+  const DeliveryServiceBottomBar({super.key});
 
   @override
   Widget build(BuildContext context) {
