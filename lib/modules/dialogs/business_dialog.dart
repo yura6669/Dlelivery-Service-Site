@@ -542,6 +542,7 @@ class _BusinessDialogState extends State<BusinessDialog> {
       Event(username!),
     );
     const String line = '--------------------------------';
+    final String phone = _phoneController.text.trim().replaceAll(' ', '');
     final siteInfo = _siteController.text.isNotEmpty
         ? _siteController.text.trim()
         : 'Не вказано';
@@ -554,7 +555,7 @@ class _BusinessDialogState extends State<BusinessDialog> {
     final String message = "Потенційна співпраця\n" +
         "$line\n" +
         "Клієнт: ${_nameController.text} ${_surnameController.text}\n" +
-        "Номер телефону: ${_phoneController.text}\n" +
+        "Номер телефону: $phone\n" +
         "Сайт: $siteInfo\n" +
         "Пошта: $emailInfo\n" +
         "Кількість доставок на тиждень: ${getDeliveriesEachWeek(_deliveriesEachWeek)}\n" +

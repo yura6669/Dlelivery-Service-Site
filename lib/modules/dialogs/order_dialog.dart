@@ -1434,9 +1434,12 @@ class _OrderDialogState extends State<OrderDialog> {
       Event(username!),
     );
     const String line = '--------------------------------';
+    final String fromNumber =
+        _fromNumberController.text.trim().replaceAll(' ', '');
     final String fromComment = _fromCommentController.text.trim().isEmpty
         ? '-'
         : _fromCommentController.text.trim();
+    final String toNumber = _toNumberController.text.trim().replaceAll(' ', '');
     final String toComment = _toCommentController.text.trim().isEmpty
         ? '-'
         : _toCommentController.text.trim();
@@ -1461,13 +1464,13 @@ class _OrderDialogState extends State<OrderDialog> {
         "Звідки\n" +
         "$line\n" +
         "Адреса: ${_fromCityController.text.trim()}, ${_fromAddressController.text.trim()}, ${_fromNumberBuildingController.text.trim()}\n" +
-        "Клієнт: ${_fromNameController.text.trim()}, ${_fromNumberController.text.trim()}\n" +
+        "Клієнт: ${_fromNameController.text.trim()}, $fromNumber\n" +
         "Коментар: $fromComment\n" +
         "$line\n" +
         "Куди\n" +
         "$line\n" +
         "Адреса: ${_toCityController.text.trim()}, ${_toAddressController.text.trim()}, ${_toNumberBuildingController.text.trim()}\n" +
-        "Клієнт: ${_toNameController.text.trim()}, ${_toNumberController.text.trim()}\n" +
+        "Клієнт: ${_toNameController.text.trim()}, $toNumber\n" +
         "Коментар: $toComment\n" +
         "$line\n" +
         "Термін виконання: $termExecution\n" +

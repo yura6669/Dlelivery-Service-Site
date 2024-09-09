@@ -472,13 +472,14 @@ class _EDeliveryFormSectionState extends State<EDeliveryFormSection> {
       Event(username!),
     );
     const String line = '--------------------------------';
+    final String phone = _phoneController.text.trim().replaceAll(' ', '');
     final comment = _messageController.text.isNotEmpty
         ? _messageController.text.trim()
         : 'Не вказано';
     final String message = "Нове замовлення через форму\n" +
         "$line\n" +
         "Клієнт: ${_nameController.text}\n" +
-        "Номер телефону: ${_phoneController.text}\n" +
+        "Номер телефону: $phone\n" +
         "Коментар: $comment";
     await teledart.sendMessage(TELEGRAM_CHAT_ID, message);
     _showMessage(
