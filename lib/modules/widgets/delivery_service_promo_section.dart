@@ -34,6 +34,9 @@ class DeliveryServicePromoSection extends StatelessWidget {
 
   Widget _buildTabletAndMobileVersion(BuildContext context) {
     return Column(
+      crossAxisAlignment: isMobile(context) || is640(context)
+          ? CrossAxisAlignment.center
+          : CrossAxisAlignment.start,
       children: [
         _buildTitle(context),
         const SizedBox(height: 24),
@@ -59,7 +62,7 @@ class DeliveryServicePromoSection extends StatelessWidget {
             onPressed: onForBusiness,
           ),
         const SizedBox(height: 40),
-        _buildImage(context),
+        if (is1024(context) || is1280(context)) _buildImage(context),
       ],
     );
   }
@@ -202,7 +205,7 @@ class DeliveryServicePromoSection extends StatelessWidget {
                         : 704,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/promo.jpg'),
+            image: AssetImage('assets/promo.png'),
             fit: BoxFit.cover,
           ),
         ));
