@@ -37,15 +37,17 @@ class DeliveryServiceFAQSection extends StatelessWidget {
   }
 
   Widget _buildTitle(BuildContext context) {
-    return Text('Часті питання',
-        style: customTextStyle(
-          context,
-          fontSize: isMobile(context) || is640(context)
-              ? 30
-              : is768(context) || is1024(context)
-                  ? 35
-                  : 48,
-        ));
+    return Text(
+      'Часті питання',
+      style: customTextStyle(
+        context,
+        fontSize: isMobile(context) || is640(context)
+            ? 30
+            : is768(context) || is1024(context)
+                ? 35
+                : 48,
+      ),
+    );
   }
 
   Widget _buildFAQ(BuildContext context) {

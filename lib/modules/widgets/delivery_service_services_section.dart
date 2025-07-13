@@ -2,14 +2,16 @@ import 'package:delivery_service/modules/resorses/resorses.dart';
 import 'package:flutter/material.dart';
 
 class DeliveryServiceServicesSection extends StatelessWidget {
-  const DeliveryServiceServicesSection({super.key});
+  final double formHeight;
+  const DeliveryServiceServicesSection({required this.formHeight, super.key});
 
   @override
   Widget build(BuildContext context) {
+    double top = isMobile(context) ? 48 : (formHeight * 0.5) + 80;
     return Container(
-      padding: EdgeInsets.symmetric(
-        vertical:
-            isMobile(context) || is640(context) || is768(context) ? 48 : 80,
+      padding: EdgeInsets.only(
+        top: top,
+        bottom: isMobile(context) || is640(context) || is768(context) ? 48 : 80,
       ),
       constraints: BoxConstraints(
           maxWidth: isMobile(context) || is640(context)

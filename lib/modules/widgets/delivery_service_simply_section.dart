@@ -1,35 +1,47 @@
+import 'package:delivery_service/modules/resorses/app_colors.dart';
 import 'package:delivery_service/modules/resorses/resorses.dart';
+import 'package:delivery_service/modules/widgets/order_form.dart';
 import 'package:flutter/material.dart';
 
 class DeliveryServiceSimplySection extends StatelessWidget {
-  const DeliveryServiceSimplySection({super.key});
+  const DeliveryServiceSimplySection({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      // height: 714,
+      constraints: BoxConstraints(
+        minHeight: isMobile(context) ? 300 : 500,
+      ),
       padding: EdgeInsets.symmetric(
         horizontal: isMobile(context) || is640(context) ? 20 : 24,
-        vertical:
-            isMobile(context) || is640(context) || is768(context) ? 80 : 192,
+        vertical: isMobile(context) || is640(context) ? 24 : 32,
       ),
       decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            AppColors.black,
+            AppColors.black,
+          ],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
         image: DecorationImage(
           image: AssetImage('assets/simply_life.png'),
           fit: BoxFit.cover,
           opacity: 0.3,
         ),
       ),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _buildTitle(context),
-            const SizedBox(height: 24),
-            _buildSubtitle(context),
-          ],
-        ),
+      child: Column(
+        children: [
+          _buildTitle(context),
+          const SizedBox(height: 24),
+          _buildSubtitle(context),
+          if (isMobile(context)) const SizedBox(height: 24),
+          if (isMobile(context)) const OrderForm(),
+        ],
       ),
     );
   }
@@ -47,6 +59,7 @@ class DeliveryServiceSimplySection extends StatelessWidget {
               : is768(context) || is1024(context)
                   ? 46
                   : 72,
+          color: AppColors.orange,
         ),
       ),
     );
@@ -54,7 +67,7 @@ class DeliveryServiceSimplySection extends StatelessWidget {
 
   Widget _buildSubtitle(BuildContext context) {
     return Text(
-      'Наш надійний сервіс дозволяє легко отримувати товари',
+      'Наш надійний сервіс дозволяє легко доставляти та отримувати товари по Дрогобичу та району',
       textAlign: TextAlign.center,
       style: customTextStyle(
         context,
@@ -64,7 +77,8 @@ class DeliveryServiceSimplySection extends StatelessWidget {
                 is1024(context)
             ? 24
             : 32,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w900,
+        color: AppColors.white,
       ),
     );
   }

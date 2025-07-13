@@ -3,8 +3,6 @@
 import 'package:delivery_service/modules/resorses/app_colors.dart';
 import 'package:flutter/material.dart';
 
-enum TermExecution { urdently, for2Hours, scheduled }
-
 enum PackageType {
   food,
   clothes,
@@ -12,29 +10,14 @@ enum PackageType {
   presents,
   flowers,
   documents,
+  medicine,
+  parcel,
   other
 }
 
-enum PackageWeight { until1kg, until5kg, until10kg, until20kg, more20kg }
-
 enum PaymentType { cash, card }
 
-enum WhoPay { sender, recipient }
-
-enum DeliveriesEachWeek { until10, more50, more100, more500, more1000 }
-
-String getTermExecution(TermExecution termExecution) {
-  switch (termExecution) {
-    case TermExecution.urdently:
-      return 'Терміново';
-    case TermExecution.for2Hours:
-      return 'До 2 годин';
-    case TermExecution.scheduled:
-      return 'Запланувати';
-  }
-}
-
-String getPackageType(PackageType packageType) {
+String getPackageType(PackageType? packageType) {
   switch (packageType) {
     case PackageType.food:
       return 'Їжа';
@@ -48,57 +31,81 @@ String getPackageType(PackageType packageType) {
       return 'Квіти';
     case PackageType.documents:
       return 'Документи';
+    case PackageType.medicine:
+      return 'Ліки';
+    case PackageType.parcel:
+      return 'Посилка';
     case PackageType.other:
       return 'Інше';
+    default:
+      return 'Оберіть тип товару';
   }
 }
 
-String getPackageWeight(PackageWeight packageWeight) {
-  switch (packageWeight) {
-    case PackageWeight.until1kg:
-      return 'До 1 кг';
-    case PackageWeight.until5kg:
-      return 'До 5 кг';
-    case PackageWeight.until10kg:
-      return 'До 10 кг';
-    case PackageWeight.until20kg:
-      return 'До 20 кг';
-    case PackageWeight.more20kg:
-      return 'Більше 20 кг';
-  }
-}
-
-String getPaymentType(PaymentType paymentType) {
+String getPaymentType(PaymentType? paymentType) {
   switch (paymentType) {
     case PaymentType.cash:
-      return 'Готівка';
+      return 'Готівкою';
     case PaymentType.card:
-      return 'Картка';
+      return 'Карткою';
+    default:
+      return 'Оберіть спосіб оплати';
   }
 }
 
-String getWhoPay(WhoPay whoPay) {
-  switch (whoPay) {
-    case WhoPay.sender:
-      return 'Відправник';
-    case WhoPay.recipient:
-      return 'Одержувач';
+List<DateTime> generateAvailableDateTimes() {
+  DateTime date = DateTime.now();
+  if (date.hour >= 20 && date.minute >= 45 && date.hour < 21) {
+    date = DateTime(date.year, date.month, date.day + 1);
   }
+  final today = DateTime(date.year, date.month, date.day);
+
+  DateTime start = DateTime(today.year, today.month, today.day, 9, 0);
+  final end = DateTime(today.year, today.month, today.day, 21, 0);
+
+  List<DateTime> slots = [];
+  while (start.isBefore(end) || start.isAtSameMomentAs(end)) {
+    slots.add(start);
+    start = start.add(const Duration(minutes: 15));
+  }
+  // Filter out times that are in the past
+  slots = slots.where((slot) => slot.isAfter(date)).toList();
+  // Ensure the first slot is at least 15 minutes from now
+  if (slots.isNotEmpty &&
+      slots.first.isBefore(date.add(const Duration(minutes: 15)))) {
+    slots.removeAt(0);
+  }
+
+  return slots;
 }
 
-String getDeliveriesEachWeek(DeliveriesEachWeek deliveriesEachWeek) {
-  switch (deliveriesEachWeek) {
-    case DeliveriesEachWeek.until10:
-      return 'Менше 10';
-    case DeliveriesEachWeek.more50:
-      return 'Більше 50';
-    case DeliveriesEachWeek.more100:
-      return 'Більше 100';
-    case DeliveriesEachWeek.more500:
-      return 'Більше 500';
-    case DeliveriesEachWeek.more1000:
-      return 'Більше 1000';
+String formatTime(DateTime? dateTime) {
+  if (dateTime == null) {
+    return 'Оберіть час доставки';
   }
+  final String day = dateTime.day.toString().padLeft(2, '0');
+  final String month = dateTime.month.toString().padLeft(2, '0');
+  final String year = dateTime.year.toString();
+  final String hour = dateTime.hour.toString().padLeft(2, '0');
+  final String minute = dateTime.minute.toString().padLeft(2, '0');
+
+  if (isAfterClose()) {
+    return '$day.$month.$year, $hour:$minute';
+  }
+
+  return '${dateTime.hour.toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}';
+}
+
+bool isAfterClose() {
+  DateTime date = DateTime.now();
+  DateTime nexDay = DateTime(date.year, date.month, date.day + 1, 0, 0);
+  if (date.hour >= 20 &&
+      date.minute >= 45 &&
+      date.hour < 21 &&
+      nexDay.isAfter(date)) {
+    return true;
+  }
+  return false;
 }
 
 bool is1280(BuildContext context) {

@@ -10,6 +10,7 @@ class DeliveryServiceAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: isMobile(context) ? null : 100,
       constraints: BoxConstraints(
         maxWidth: isMobile(context) || is640(context)
             ? 640
@@ -55,13 +56,8 @@ class DeliveryServiceAppBar extends StatelessWidget {
         _buildSocialIcon(
           context,
           path: 'assets/facebook.png',
-          onPressed: () => _launchURL('https://www.facebook.com/'),
-        ),
-        const SizedBox(width: 16),
-        _buildSocialIcon(
-          context,
-          path: 'assets/instagram.png',
-          onPressed: () => _launchURL('https://www.instagram.com/'),
+          onPressed: () =>
+              _launchURL('https://www.facebook.com/share/16WwaJ7V5V/'),
         ),
       ],
     );
