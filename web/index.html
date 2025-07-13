@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
     <base href="$FLUTTER_BASE_HREF" />
 
+    <!-- Загальні мета-теги -->
     <meta charset="UTF-8" />
     <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
-    <meta name="description" content="Delivery Service" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- iOS meta tags & icons -->
+    <!-- SEO -->
+    <meta name="author" content="Delivery Service" />
+    <meta
+      name="description"
+      content="Служба доставки у Дрогобичі та районі. Доставка їжі, квітів, ліків, подарунків та автозапчастин швидко та зручно."
+    />
+    <meta
+      name="keywords"
+      content="доставка, їжа, Дрогобич, продукти, ліки, квіти, подарунки, автозапчастини, кур'єр, служба доставки"
+    />
+
+    <!-- Open Graph для соцмереж -->
+    <meta
+      property="og:title"
+      content="Служба доставки у Дрогобичі | Delivery Service"
+    />
+    <meta
+      property="og:description"
+      content="Швидка та надійна доставка у Дрогобичі та районі. Замовляйте онлайн — зручно та безпечно."
+    />
+    <meta
+      property="og:image"
+      content="https://delivery-service.in.ua/icons/Icon-192.png"
+    />
+    <meta property="og:url" content="https://delivery-service.in.ua/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- iOS meta -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="delivery_service" />
+    <meta name="apple-mobile-web-app-title" content="Delivery Service" />
     <link rel="apple-touch-icon" href="icons/Icon-192.png" />
 
-    <!-- Favicon -->
+    <!-- favicon -->
     <link rel="icon" type="image/png" href="favicon.png" />
 
-    <title>delivery_service</title>
+    <title>Служба доставки у Дрогобичі | Delivery Service</title>
     <link rel="manifest" href="manifest.json" />
 
     <script>
-      // The value below is injected by flutter build, do not touch.
       var serviceWorkerVersion = null;
     </script>
-    <!-- This script adds the flutter initialization JS code -->
     <script src="flutter.js" defer></script>
   </head>
+
   <body>
     <script>
       window.addEventListener("load", function (ev) {
-        // Download main.dart.js
         _flutter.loader.loadEntrypoint({
           serviceWorker: {
             serviceWorkerVersion: serviceWorkerVersion,

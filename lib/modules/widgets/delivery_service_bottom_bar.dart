@@ -63,14 +63,15 @@ class DeliveryServiceBottomBar extends StatelessWidget {
         _buildSocialIcon(
           context,
           path: 'assets/facebook.png',
-          onPressed: () => _launchURL('https://www.facebook.com/'),
+          onPressed: () =>
+              _launchURL('https://www.facebook.com/share/16WwaJ7V5V/'),
         ),
-        const SizedBox(width: 16),
-        _buildSocialIcon(
-          context,
-          path: 'assets/instagram.png',
-          onPressed: () => _launchURL('https://www.instagram.com/'),
-        ),
+        // const SizedBox(width: 16),
+        // _buildSocialIcon(
+        //   context,
+        //   path: 'assets/instagram.png',
+        //   onPressed: () => _launchURL('https://www.instagram.com/'),
+        // ),
       ],
     );
   }
@@ -96,14 +97,15 @@ class DeliveryServiceBottomBar extends StatelessWidget {
             _buildSocialIcon(
               context,
               path: 'assets/facebook.png',
-              onPressed: () => _launchURL('https://www.facebook.com/'),
+              onPressed: () =>
+                  _launchURL('https://www.facebook.com/share/16WwaJ7V5V/'),
             ),
-            const SizedBox(width: 16),
-            _buildSocialIcon(
-              context,
-              path: 'assets/instagram.png',
-              onPressed: () => _launchURL('https://www.instagram.com/'),
-            ),
+            // const SizedBox(width: 16),
+            // _buildSocialIcon(
+            //   context,
+            //   path: 'assets/instagram.png',
+            //   onPressed: () => _launchURL('https://www.instagram.com/'),
+            // ),
           ],
         ),
       ],
